@@ -24,10 +24,8 @@ class ProductController
     {
         try {
             $data = $_POST;
-
             // Directly create the product with the submitted data
             Product::make($data);
-
             // Redirect to the homepage after successful creation
             redirect('/');
         } catch (\Throwable $e) {
@@ -42,7 +40,6 @@ class ProductController
         try {
             // Delete products where SKU is in the submitted 'deleted' list
             Product::deleteIn('sku', $_POST['deleted'] ?? []);
-
             // Redirect to the homepage after successful deletion
             redirect('/');
         } catch (\Throwable $e) {

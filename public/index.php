@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Core\Router;
 use App\Controllers\ProductController;
 use App\Controllers\ValidateProductController;
@@ -7,8 +8,8 @@ use App\Controllers\ProductAttributeController;
 
 
 require_once dirname(__DIR__) . '/app/Config/Config.php';
-require_once ROOT . '/app/Helper/helper.php';
 require_once ROOT . '/vendor/autoload.php';
+require_once ROOT . '/app/Helper/helper.php';
 
 
 $router = new Router;

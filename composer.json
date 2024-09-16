@@ -2,7 +2,7 @@
   "name": "ait/scandiweb",
   "autoload": {
     "psr-4": {
-      "App\\": "App/"
+      "App\\": "app/"
     }
   },
   "authors": [

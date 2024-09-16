@@ -50,7 +50,6 @@ class Router
                 }
             }
         }
-
         $this->abort();
     }
 

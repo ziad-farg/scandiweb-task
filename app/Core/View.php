@@ -6,8 +6,7 @@ class View
 {
     public static function render($view, $data = [])
     {
-        $fileView = dirname(__DIR__) . '../../app/Views/' . $view . '.php';
-
+        $fileView = ROOT . '/app/Views/' . $view . '.php';
         if (file_exists($fileView)) {
             extract($data);
             require_once $fileView;

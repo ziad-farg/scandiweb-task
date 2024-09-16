@@ -1,0 +1,28 @@
+# Use the mod_rewrite module
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect all requests to the public folder
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ /public/$1 [L]
+
+    # Set the base directory to the public folder
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /public/index.php [L]
+</IfModule>
+
+# Deny access to the .htaccess file itself for security
+<Files .htaccess>
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Optionally deny access to other sensitive files
+<FilesMatch "\.(env|ini|log|sh|sql)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Protect against directory listing
+Options -Indexes
