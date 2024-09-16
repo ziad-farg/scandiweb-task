@@ -57,7 +57,6 @@ abstract class Model
         $db = Database::getConnection(); // Get the database connection here
         $placeholders = rtrim(str_repeat('?,', count($items)), ',');
         $sql = 'DELETE FROM ' . static::$tableName . ' WHERE ' . $colName . ' IN ' . "($placeholders)";
-
         $stmt = $db->prepare($sql);
         return $stmt->execute($items);
     }
